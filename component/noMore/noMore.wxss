@@ -1,0 +1,7 @@
+/* component/noMore/noMore.wxss */
+.no-more{
+  display: block;
+  padding: 20rpx;
+  text-align: center;
+  color: #979797;
+}

@@ -1,0 +1,4 @@
+<!--component/loading/loading.wxml-->
+<view class="loading">
+<van-loading type="spinner" color="#0391FF"/>
+</view>

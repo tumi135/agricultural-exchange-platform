@@ -1,0 +1,35 @@
+<!--pages/my/my.wxml-->
+<view>
+  <view class="my-info">
+    <block wx:if="{{hasUserInfo}}">
+      <view class="my-comment">
+        <van-icon name="comment-o" size="60rpx" dot/>
+      </view>
+      <view class="user-info">
+        <view class="avator">
+          <image class="avator-img" mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="info-right">
+          <text class="user-name">{{userInfo.nickName}}</text>
+          <text class="user-account">账号：159*********8</text>
+        </view>
+        <van-icon name="arrow" size="38rpx" color="#979797" />
+      </view>
+    </block>
+    <button bindgetuserinfo="getUserInfo" open-type="getUserInfo" wx:if="{{!hasUserInfo}}">登录</button>
+  </view>
+  <view class="list">
+    <navigator url="#" class="hairline--bottom list-item">联系我们</navigator>
+    <navigator url="#" class="list-item">用户反馈</navigator>
+  </view>
+  <view>
+    <navigator url="#" class="set-up">
+      <text>设置</text>
+      <van-icon name="arrow" size="38rpx" color="#979797" />
+    </navigator>
+  </view>
+  <view class="footer">
+  <text class="footer-item">广州科创云科技股份有限公司</text>
+  <text class="footer-item">提供技术支持</text>
+  </view>
+</view>

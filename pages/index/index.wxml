@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="swiper">
+    <swiper indicator-color="rgba(193,193,193,0.7)" indicator-active-color="#EDEDED" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{swiperList}}" wx:key="item.url">
+        <swiper-item>
+          <view class="swiper-item" data-url="{{item.url}}" bindtap="swiperNavigateTo">
+            <image mode="aspectFit" src="{{item.img}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="index-nav">
+    <navigator class="index-nav-item" url="../products/products">
+      <image src="../../static/img/indexnav.png"></image>
+      <text>农产品</text>
+    </navigator>
+    <navigator class="index-nav-item" url="../investment/investment">
+      <image src="../../static/img/indexnav.png"></image>
+      <text>招商引资</text>
+    </navigator>
+    <navigator class="index-nav-item" url="../policy/policy">
+      <image src="../../static/img/indexnav.png"></image>
+      <text>农业政策</text>
+    </navigator>
+    <navigator class="index-nav-item" url="../technology/technology">
+      <image src="../../static/img/indexnav.png"></image>
+      <text>农业技术</text>
+    </navigator>
+    <navigator class="index-nav-item" url="../experts/experts">
+      <image src="../../static/img/indexnav.png"></image>
+      <text>专家认证</text>
+    </navigator>
+  </view>
+  <view class="new-news">
+    <view class="new-header">
+      <text class="new-header-title">最新消息</text>
+      <navigator url="../askQuestions/askQuestions" open-type="switchTab" class="more">
+        <text class="more-text">更多</text>
+        <van-icon class="arrow" name="arrow" color="#979797" size="46prx" />
+      </navigator>
+    </view>
+    <view class="news-list">
+      <list_item prop-father="'home'" news-list="{{newsList}}"></list_item>
+      <no-more wx:if="{{!flag}}"></no-more>
+      <my-loading wx:if="{{loading}}" />
+    </view>
+  </view>
+</view>

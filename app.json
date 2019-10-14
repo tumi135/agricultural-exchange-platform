@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/products/products",
+    "pages/investment/investment",
+    "pages/policy/policy",
+    "pages/technology/technology",
+    "pages/experts/experts",
+    "pages/my/my",
+    "pages/askQuestions/askQuestions",
+    "pages/questionsItem/questionsItem",
+    "pages/article/article",
+    "pages/toAsk/toAsk"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "./miniprogram_npm/vant-weapp/icon/index",
+    "no-more": "../../component/noMore/noMore",
+    "my-loading": "../../component//loading/loading"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#979797",
+    "selectedColor": "#1195db",
+    "list": [
+      {
+        "selectedIconPath": "./static/img/shouye.png",
+        "iconPath": "./static/img/shouye_no.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "./static/img/tiwen.png",
+        "iconPath": "./static/img/tiwen_no.png",
+        "pagePath": "pages/askQuestions/askQuestions",
+        "text": "提问"
+      },
+      {
+        "selectedIconPath": "./static/img/wode.png",
+        "iconPath": "./static/img/wode_no.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

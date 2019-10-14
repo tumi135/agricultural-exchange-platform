@@ -1,0 +1,21 @@
+/* pages/article/article.wxss */
+.header{
+  padding: 20rpx;
+  border-bottom: 1px solid #EDEDED;
+}
+.title{
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.time-and-src{
+  margin-top: 18rpx;
+  font-size: 22rpx;
+  color: #979797;
+}
+.time{
+  margin-right: 28rpx;
+}
+.content{
+  padding: 20rpx;
+  font-size: 28rpx;
+}

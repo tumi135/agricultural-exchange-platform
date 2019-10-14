@@ -1,0 +1,34 @@
+<!--pages/askQuestions/askQuestions.wxml-->
+<view class="askQuestions">
+  <view class="question-item" wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class="user-info">
+      <view class="avatar">
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view class="user-info-right">
+        <text class="user-name">{{item.userName}}</text>
+        <view class="time-adr">
+          <text class="time">{{item.craeteTime}}</text>
+          <view class="address" wx:if="{{item.address}}">
+            <van-icon name="map-marked" color="#979797" size="26rpx" />
+            <text class="address-text">{{item.address}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <rich-text>{{item.content}}</rich-text>
+      <van-grid column-num="3" clickable="true" wx:if="{{item.image}}" square border="{{ false }}">
+        <van-grid-item use-slot wx:for="{{item.image}}" wx:for-item="i" wx:key="*this" clickable="true" bindtap="previewImage" data-current="{{i}}" data-urls="{{item.image}}">
+          <image style="width: 100%; height: 100%;" src="{{i}}" />
+        </van-grid-item>
+      </van-grid>
+    </view>
+    <view class="reply">
+      <van-icon name="comment-o" size="38rpx" color="#979797"/>
+      <text class="reply-num">{{item.replyNum}}</text>
+    </view>
+  </view>
+  <no-more wx:if="{{!flag}}"></no-more>
+  <my-loading wx:if="{{loading}}" />
+</view>

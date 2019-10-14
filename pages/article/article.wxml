@@ -1,0 +1,13 @@
+<!--pages/article/article.wxml-->
+<view>
+  <view class="header">
+    <text class="title">{{article.title}}</text>
+    <view class="time-and-src">
+      <text class="time">{{article.time}}</text>
+      <text>{{article.src}}</text>
+    </view>
+  </view>
+  <view class="content">
+    <rich-text nodes="{{article.content}}" space="emsp"></rich-text>
+  </view>
+</view>

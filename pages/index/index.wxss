@@ -1,0 +1,123 @@
+/**index.wxss**/
+.container{
+padding: 0;
+}
+.swiper{
+  padding: 0;
+  width: 750rpx;
+  height: 375rpx;
+}
+.swiper-item{
+  width: 750rpx;
+  height: 375rpx;
+}
+.swiper-item image{
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .wx-swiper-dot {
+  width: 30rpx;
+  height: 10rpx;
+  border-radius: 5rpx;
+}
+ 
+/* 选中指示点的样式 */
+.swiper .wx-swiper-dot.wx-swiper-dot-active {
+    width: 30rpx;
+    height: 10rpx;
+    border-radius: 5rpx;
+}
+.index-nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.index-nav-item{
+  width: 120rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-nav-item>image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-bottom: 15prx;
+}
+.index-nav-item>text{
+  font-size: 28rpx;
+  color: #979797;
+}
+
+.new-news{
+  width: 100%;
+  padding: 20rpx 20rpx 110rpx 20rpx;
+  box-sizing: border-box;
+}
+.new-header{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.new-header-title{
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.more{
+  display: flex;
+  align-items: center;
+  
+}
+.more-text{
+  color: #979797;
+  font-size: 32rpx;
+}
+.arrow{
+  margin-top: 6rpx;
+}
+
+
+.news-list-item{
+  display: flex;
+  margin-bottom: 28rpx;
+}
+.news-list-item>image{
+  width: 200rpx;
+  height: 180rpx;
+  border-radius: 28rpx;
+  background: #EDEDED;
+}
+.news-list-item-right{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-left: 28rpx;
+  min-height: 180rpx;
+}
+.title{
+  font-size: 36rpx;
+  display: inline-block;
+  margin-top: 12rpx;
+}
+.item-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.craeteTime{
+  font-size: 28rpx;
+  color: #979797;
+}
+.like text{
+  display: inline-block;
+  margin-left: 22rpx;
+  font-size: 28rpx;
+  color: #979797; 
+}
