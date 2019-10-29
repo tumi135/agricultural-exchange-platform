@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100rpx;
+  height: 110rpx;
   background: white;
   display: flex;
   padding-bottom: env(safe-area-inset-bottom);
@@ -29,12 +29,12 @@
   flex-direction: column;
 }
 
-.tab-bar-item cover-image {
+.tab-bar-item image {
   width: 40rpx;
   height: 40rpx;
-  margin-bottom: 12rpx;
+  /* margin-bottom: 12rpx; */
 }
 
-.tab-bar-item cover-view {
+.tab-bar-item view {
   font-size: 28rpx;
 }

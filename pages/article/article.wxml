@@ -3,11 +3,12 @@
   <view class="header">
     <text class="title">{{article.title}}</text>
     <view class="time-and-src">
-      <text class="time">{{article.time}}</text>
-      <text>{{article.src}}</text>
+      <text class="time">{{article.dateAdd}}</text>
+      <text>{{article.keywords}}</text>
     </view>
   </view>
   <view class="content">
     <rich-text nodes="{{article.content}}" space="emsp"></rich-text>
   </view>
+  <footer pop-title="{{article.title}}" pop-path="{{path}}" pop-data="{{data}}"/>
 </view>

@@ -19,11 +19,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"enhance": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.2",
-	"appid": "wx2987f42ce34a6eb5",
+	"libVersion": "2.5.2",
+	"appid": "wx7d8722711d59c082",
 	"projectname": "nongchangping",
 	"debugOptions": {
 		"hidedInDevtools": []

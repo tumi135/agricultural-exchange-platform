@@ -1,0 +1,8 @@
+<!--component/fotter/footer.wxml-->
+<view class="footer" >
+  <navigator class="home" url="../index/index" open-type="switchTab">
+    <van-icon name="wap-home-o" size="50rpx" />
+    <text>首页</text>
+  </navigator>
+  <button class="kefu" open-type="contact" bindcontact="handleContact"  show-message-card session-from="{{data}}">联系客服</button>
+</view>

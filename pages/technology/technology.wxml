@@ -1,2 +1,6 @@
 <!--pages/technology/technology.wxml-->
-<text>pages/technology/technology.wxml</text>
+<view class="investment">
+  <list_item prop-father="'investment'" news-list="{{newsList}}"></list_item>
+  <no-more wx:if="{{!flag}}"></no-more>
+  <my-loading  wx:if="{{loading}}" />
+</view>

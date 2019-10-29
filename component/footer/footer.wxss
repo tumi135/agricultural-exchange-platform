@@ -1,0 +1,38 @@
+/* component/fotter/footer.wxss */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #fff;
+  box-shadow: 0 -3px 3px #8888882f;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100rpx;
+  width: 200rpx;
+  /* padding-bottom: env(safe-area-inset-bottom); */
+  font-size: 32rpx;
+  color: #979797;
+}
+
+.kefu {
+  flex: 1;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #0391ff;
+  color: #fff;
+  font-size: 32rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+}

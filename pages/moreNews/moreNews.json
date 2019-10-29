@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list_item": "../../component/listitem/listitem"
+  },
+  "navigationBarTitleText": "最新消息"
+}

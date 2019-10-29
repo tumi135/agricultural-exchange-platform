@@ -1,0 +1,8 @@
+<!--component/popup/popup.wxml-->
+
+<view class="poup" hidden="{{!show}}" catchtouchmove='ture'>
+  <view class="bg" bindtap="close"></view>
+  <view class="poup-content {{close?'close':''}}" style="height:{{popHeight}}">
+    <slot></slot>
+  </view>
+</view>

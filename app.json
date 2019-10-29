@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/products/products",
     "pages/investment/investment",
     "pages/policy/policy",
@@ -11,8 +10,15 @@
     "pages/askQuestions/askQuestions",
     "pages/questionsItem/questionsItem",
     "pages/article/article",
-    "pages/toAsk/toAsk"
+    "pages/toAsk/toAsk",
+    "pages/productsItem/productsItem",
+    "pages/moreNews/moreNews"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -23,7 +29,12 @@
   "usingComponents": {
     "van-icon": "./miniprogram_npm/vant-weapp/icon/index",
     "no-more": "../../component/noMore/noMore",
-    "my-loading": "../../component//loading/loading"
+    "my-loading": "../../component//loading/loading",
+    "van-toast": "./miniprogram_npm/vant-weapp/toast/index",
+    "footer": "../../component/footer/footer",
+    "my-popup": "../../component/popup/popup",
+    "van-dialog": "./miniprogram_npm/vant-weapp/dialog/index",
+    "tab-bar":"./custom-tab-bar/index"
   },
   "tabBar": {
     "custom": true,

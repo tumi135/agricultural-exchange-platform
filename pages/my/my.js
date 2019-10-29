@@ -54,7 +54,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
+    if (!app.globalData.customTabbar){
+
+    }else if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
         selected: 2
@@ -102,6 +104,21 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+    var userInfo = JSON.stringify(e.detail.userInfo)
+    var token = wx.getStorageSync('token')
+
+    wx.setStorageSync('userInfo', userInfo)
+
+    wx.request({
+      url: 'https://api.it120.cc/tumi123api/user/modify?avatarUrl=' + e.detail.userInfo.avatarUrl + '&city=' + e.detail.userInfo.city + '&province' + e.detail.userInfo.country + '&nick=' + e.detail.userInfo.nickName + '&token=' + token,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res)
+      }
     })
   }
 })

@@ -1,0 +1,106 @@
+<!--pages/productsItem/productsItem.wxml-->
+<view class="productsItem">
+  <view class="swiper">
+    <swiper indicator-color="rgba(193,193,193,0.7)" indicator-active-color="#EDEDED" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style="height:750rpx">
+      <block wx:for="{{goodsInfo.pics}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item" bindtap="swiperNavigateTo" data-item="item">
+            <image mode="aspectFit" src="{{item.pic}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goods-info">
+    <text class="title">{{goodsInfo.name}}</text>
+    <view class="price">
+      <text class="new-price">￥{{goodsInfo.minPrice}}</text>
+      <text class="old-price">￥{{goodsInfo.originalPrice}}</text>
+    </view>
+  </view>
+  <view class="goods-type">
+    <text class="gg">规格</text>
+    <view class="choose-type" bindtap="toShowClose">
+      <text class="qxzgg">请选择规格</text>
+      <van-icon name="arrow" color="#979797" size="18px" />
+    </view>
+  </view>
+  <view class="details" wx:if="{{goodsInfo.content}}">
+    <text class="details-title">商品描述</text>
+    <view class="details-box">
+      <rich-text nodes="{{goodsInfo.content}}"></rich-text>
+      <!-- <image mode="widthFix" wx:for="{{goodsInfo.details}}" wx:key="*this" src="{{item}}"></image> -->
+    </view>
+  </view>
+  <footer pop-data="{{data}}" />
+  <my-popup pop-show="{{show}}" pop-height="1000rpx">
+    <view class="poup-wrapper">
+      <view class="poup-top">
+        <text class="poup-top-title">款式规格</text>
+        <van-icon name="cross" color="#979797" size="22px" bindtap="toShowClose" />
+      </view>
+      <view class="choose-info">
+        <view class="goods-img">
+          <image mode="aspectFit" src="{{goodsInfo.pic}}"></image>
+        </view>
+        <view class="goods-info-right">
+          <view class="price-box">
+            <text class="choose-price" wx:if="{{myChoose.price}}">￥{{myChoose.price}}</text>
+            <text class="choose-old-price" wx:if="{{myChoose.oldPrice}}">￥{{myChoose.oldPrice}}</text>
+          </view>
+          <text class="choose-name">已选择：{{m1.chooseName(clickingBox)}}</text>
+        </view>
+      </view>
+      <scroll-view scroll-y scroll-y="true" class="type-content-box">
+        <view class="type-box" wx:for="{{typeInfo.tree}}" wx:key="*this">
+          <text class="label">{{item.k}}</text>
+          <view class="choose-list">
+            <block wx:for="{{item.v}}" wx:for-item="myItem" wx:for-index="idx" wx:key="{{myItem.id}}">
+              <view class="choose-list-item {{m1.check(clickingBox,myItem.id)?'act':''}} {{m1.canNnot(canNotClickBox,myItem.id)?'no-goods':''}}" data-item="{{myItem}}" data-ks="{{item.k_s}}" bindtap="chooseType">{{myItem.name}}</view>
+            </block>
+          </view>
+        </view>
+        <view class="choose-num">
+          <text class="label">数量</text>
+          <van-stepper value="{{amount}}" min="{{1}}" max="{{myChoose.stock_num}}" bind:change="onNumChange" disabled="{{m1.chooseNum(myChoose)}}" />
+        </view>
+      </scroll-view>
+    </view>
+  </my-popup>
+</view>
+<wxs module="m1">
+  function check(clickingBox, id) {
+    var check = clickingBox.some(function(item) {
+      return item.id == id
+    })
+    return check
+  }
+
+  function canNnot(canNotClickBox, id) {
+    var check = canNotClickBox.some(function(item) {
+      return item.id == id
+    })
+    return check
+  }
+
+  function chooseName(clickingBox) {
+
+    var str = ''
+    var check = clickingBox.forEach(function(item) {
+      str += item.name + ' '
+    })
+    return str
+  }
+
+  function chooseNum(myChoose) {
+    if (myChoose.stock_num && myChoose.stock_num > 1) {
+      return false
+    }
+    return true
+  }
+
+  module.exports.check = check
+  module.exports.canNnot = canNnot
+  module.exports.chooseName = chooseName
+  module.exports.chooseNum = chooseNum
+</wxs>

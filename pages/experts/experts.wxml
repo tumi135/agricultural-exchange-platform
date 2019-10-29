@@ -1,2 +1,53 @@
 <!--pages/experts/experts.wxml-->
-<text>pages/experts/experts.wxml</text>
+<view class="experts">
+  <view class="wszl">完善资料</view>
+  <view class="input-box">
+    <view class="input-item">
+      <text class="label">姓名</text>
+      <input class="input" placeholder-class="input-placeholder" placeholder="请填写您的姓名" value="{{experName}}" bindinput="inputeidt" data-item="experName" />
+    </view>
+    <view class="input-item">
+      <text class="label">电话</text>
+      <input class="input" placeholder="请填写您的联系电话" value="{{experPhone}}" bindinput="inputeidt" data-item="experPhone"  type="number"/>
+    </view>
+  </view>
+  <view class="carded">
+    <text class="label">身份证</text>
+    <view class="carded-box">
+      <view class="carded-one carded-one01"  bindtap="getCard" data-card="obverse">
+        <view class="bg">
+          <image  src="../../static/img/credentials_icon.png"></image>
+          <text>身份证正面</text>
+        </view>
+        <view class="carded-item"  wx:if="{{obverse}}">
+          <image src="{{obverse}}"></image>
+        </view>
+      </view>
+      <view class="carded-one"  bindtap="getCard" data-card="reverse">
+        <view class="bg">
+          <image src="../../static/img/credentials_icon.png"></image>
+          <text>身份证反面</text>
+        </view>
+        <view class="carded-item"  wx:if="{{reverse}}">
+          <image src="{{reverse}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="carded">
+    <text class="label">相关资格证书</text>
+    <view class="carded-box">
+      <view class="carded-one"  bindtap="getCard" data-card="certificate" >
+        <view class="bg">
+          <image src="../../static/img/zhengshu.png"></image>
+          <text>资格证书</text>
+        </view>
+        <view class="carded-item"  wx:if="{{certificate}}">
+          <image src="{{certificate}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button bindtap="send" class="send-button">提交审核</button>
+  <van-toast id="van-toast" />
+</view>

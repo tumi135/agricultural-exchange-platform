@@ -1,6 +1,6 @@
 /* pages/askQuestions/askQuestions.wxss */
 .askQuestions{
-  padding-bottom:110rpx; 
+  padding-bottom:168rpx; 
 }
 page {
   background-color: #f2f2f2;
@@ -50,8 +50,8 @@ display: flex;
 align-items: center;
 }
 .address{
-  margin-left: 28rpx;
   overflow: hidden;
+  font-size: 26rpx;
 }
 .content .van-grid-item__content{
   padding: 12rpx;
@@ -66,4 +66,23 @@ align-items: center;
   margin-left: 12rpx;
   font-size: 28rpx;
   padding: 5rpx 0rpx 13rpx;
+}
+.fixed-box{
+  position: fixed;
+  bottom: 300rpx;
+  right: 38rpx;
+  width: 90rpx;
+}
+.to-ask{
+  background: rgba(151,151,151,0.8);
+  border-radius: 50rpx;
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #ffffff;
+  text-align: center;
+  padding: 15rpx;
+  box-sizing: border-box;
+  margin-top: 38rpx;
 }

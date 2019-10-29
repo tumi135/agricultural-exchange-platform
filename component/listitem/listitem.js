@@ -23,7 +23,6 @@ Component({
    */
   methods: {
     changeLike: tool.debounce(function (event) {
-      console.log(this.properties.propFather)
       //请求数据
       var that = this
       var ev = event.currentTarget.dataset
@@ -31,15 +30,49 @@ Component({
       var list = that.data.newsList
       var changeItem = list[ev.index]
       if (changeItem.myLike) {
-        changeItem.likeNum--
+        changeItem.usefulNumber--
       } else {
-        changeItem.likeNum++
+        changeItem.usefulNumber++
       }
       changeItem.myLike = !changeItem.myLike
       list.splice(ev.index, 1, changeItem)
-      that.setData({
-        newsList: list
-      })
+
+      var a = {}
+      a['newsList[' + ev.index + ']'] = changeItem
+      that.setData(a)
+
+
+      // that.setData({
+      //   newsList: list
+      // })
+
+      var token = wx.getStorageSync('token')
+
+
+
+      // wx.request({
+      //   url: 'https://api.it120.cc/tumi123api/cms/news/useful?id=' + ev.id + '&token=' + token, //招商引资消息
+      //   data: {
+
+      //   },
+      //   success: function (res){
+      //     console.log(res)
+      //   }
+      // })
+      // wx.request({
+      //   url: 'https://api.it120.cc/tumi123api/cms/news/useful/logs?id=' + ev.id + '&token=' + token, //招商引资消息
+      //   data: {
+
+      //   },
+      //   success: function (res){
+      //     console.log(res)
+      //   }
+      // })
+
+
+
+
+
     }, 500),
     seeItem: function (e) {
       wx.navigateTo({

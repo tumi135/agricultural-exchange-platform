@@ -4,18 +4,21 @@
   border-bottom: 1px solid #EDEDED;
 }
 .title{
-  font-size: 38rpx;
+  font-size: 18px;
   font-weight: 600;
 }
 .time-and-src{
-  margin-top: 18rpx;
-  font-size: 22rpx;
+  margin-top: 10px;
+  font-size: 12px;
   color: #979797;
 }
 .time{
-  margin-right: 28rpx;
+  margin-right: 14px;
 }
 .content{
-  padding: 20rpx;
-  font-size: 28rpx;
+  padding: 20rpx 20rpx 168rpx;
+  /* font-size: 28rpx; */
 }
+/* .content img{
+  width: 100%;
+} */

@@ -1,2 +1,14 @@
 <!--pages/products/products.wxml-->
-<text>pages/products/products.wxml</text>
+<view class="products">
+  <!-- <navigator url="../productsItem/productsItem?goodsId=1">跳转</navigator> -->
+
+  <navigator class="goods-list-item" wx:for="{{list}}" wx:key="{{item.id}}" url="../productsItem/productsItem?goodsId={{item.id}}">
+    <view class="pic">
+      <image mode="aspectFit" src="{{item.pic}}"></image>
+    </view>
+    <view class="goods-name">{{item.name}}</view>
+    <text class="goods-price">￥{{item.minPrice}}</text>
+  </navigator>
+  <no-more wx:if="{{!flag}}"></no-more>
+  <my-loading wx:if="{{loading}}" />
+</view>

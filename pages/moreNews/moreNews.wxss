@@ -1,0 +1,4 @@
+/* pages/moreNews/moreNews.wxss */
+.investment{
+  padding: 20rpx 20rpx 110rpx 20rpx;
+}

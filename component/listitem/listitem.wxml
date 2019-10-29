@@ -1,14 +1,14 @@
 <!--component/list_item/list_item.wxml-->
 <view>
   <view class="news-list-item" wx:for="{{newsList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="seeItem">
-    <image src="{{item.image}}" mode="aspectFill"></image>
+    <image src="{{item.pic}}" mode="aspectFill"></image>
     <view class="news-list-item-right">
       <text class="title">{{item.title}}</text>
       <view class="item-bottom">
-        <text class="craeteTime">{{item.craeteTime}}</text>
+        <text class="craeteTime">{{item.dateAdd}}</text>
         <view class="like">
           <van-icon catchtap="changeLike" data-index="{{index}}" data-id="{{item.id}}" name="good-job" size="28rpx" color="{{item.myLike?'#0391FF':'#979797'}}" />
-          <text>{{item.likeNum}}</text>
+          <text>{{item.usefulNumber}}</text>
         </view>
       </view>
     </view>

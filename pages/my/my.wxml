@@ -19,8 +19,8 @@
     <button bindgetuserinfo="getUserInfo" open-type="getUserInfo" wx:if="{{!hasUserInfo}}">登录</button>
   </view>
   <view class="list">
-    <navigator url="#" class="hairline--bottom list-item">联系我们</navigator>
-    <navigator url="#" class="list-item">用户反馈</navigator>
+    <button open-type="contact"  class="hairline--bottom list-item">联系我们</button>
+    <button open-type="contact"  class="list-item">用户反馈</button>
   </view>
   <view>
     <navigator url="#" class="set-up">
@@ -29,7 +29,8 @@
     </navigator>
   </view>
   <view class="footer">
-  <text class="footer-item">广州科创云科技股份有限公司</text>
+  <text class="footer-item">广州不知道叫什么名字股份有限公司</text>
   <text class="footer-item">提供技术支持</text>
   </view>
+  <tab-bar pop-selected="2" />
 </view>

@@ -1,0 +1,52 @@
+/* component/popup/popup.wxss */
+.poup {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.poup-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 30rpx 30rpx 0 0;
+  background: #fff;
+  /* height: 1000rpx; */
+  width: 100%;
+  box-sizing: border-box;
+  animation: show 400ms linear;
+}
+
+.close {
+  animation: close 400ms linear;
+}
+
+@keyframes show {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes close {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}

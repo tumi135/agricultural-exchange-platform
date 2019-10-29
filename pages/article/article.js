@@ -6,7 +6,11 @@ Page({
    */
   data: {
     articleId: '',
-    article: {}
+    article: {},
+    path:'',
+    data: {
+      "source":"售前咨询"
+    }
   },
 
   /**
@@ -14,14 +18,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    var path = this.route + '?id=options.id'
+    console.log(path)
   
     wx.request({
-      url: 'https://www.fastmock.site/mock/26ec56645b0706b8e9a68a60854b6a00/ncp/article', //轮播图
-      data: { id: options.id},
+      url: 'https://api.it120.cc/tumi123api/cms/news/detail?id=' + options.id, 
+      // data: { id: options.id},
       success(res) {
-        console.log(res.data.data)
+console.log(res)
         that.setData({
-          article: res.data.data
+          article: res.data.data,
+          path: path
         })
       }
     })

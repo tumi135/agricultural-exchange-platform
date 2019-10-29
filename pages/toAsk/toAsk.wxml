@@ -1,2 +1,29 @@
 <!--pages/toAsk/toAsk.wxml-->
-<text>pages/toAsk/toAsk.wxml</text>
+<view class="to-ask">
+  <view class="button-box">
+    <button class="cancel" bindtap="cancel">取消</button>
+    <button class="confirm" bindtap="confirm">完成</button>
+  </view>
+  <view class="content">
+    <textarea class="textarea" placeholder-class="placeholder" placeholder="请详细描述您问题，字数不少于5个，限300字以内" maxlength="300" bindinput="inputeidt"></textarea>
+    <view class="img-box">
+      <view class='ui_uploader_item img-box-child' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <!-- 删除-->
+        <!-- <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="40rpx" color="red" /> -->
+        <van-icon name="clear "  class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" size="40rpx" color="red"/>
+        <!-- 图片-->
+        <image bindtap='showImg' class="showImg" mode="aspectFit" data-index="{{index}}" src='{{item}}'></image>
+      </view>
+      <!-- 上传按钮+框 -->
+      <view class='ui_uploader img-box-child' bindtap='upload' wx:if="{{showUpload}}">
+        <van-icon name="add-o"  color="#7d7e80" size="70rpx" />
+        <text>最多9张</text>
+      </view>
+    </view>
+    <view class="address">
+      <van-icon name="location" color="#16a5f1" size="50rpx" bindtap="chooseLocation"/>
+      <text>{{address}}</text>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+</view>

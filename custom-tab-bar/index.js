@@ -1,9 +1,13 @@
 // custom-tab-bar/index.js
 Component({
+  properties: {
+    popSelected:Number
+  },
   data: {
     selected: 0,
     color: "#979797",
     selectedColor: "#1195db",
+    buttom68: false,
     list: [{
         "selectedIconPath": "/static/img/shouye.png",
         "iconPath": "/static/img/shouye_no.png",
@@ -21,16 +25,22 @@ Component({
         "text": "我的"
       }]
   },
-  attached() {
+  ready() {
+    //兼容低版本
+    if (this.properties.popSelected){
+      this.setData({
+        selected: this.properties.popSelected
+      })
+    }
   },
   methods: {
     switchTab(e) {
       const data = e.currentTarget.dataset
       const url = data.path
       wx.switchTab({ url })
-      this.setData({
-        selected: data.index
-      })
+      // this.setData({
+      //   selected: data.index
+      // })
     }
   }
 })

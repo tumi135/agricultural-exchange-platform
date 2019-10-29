@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="swiper">
-    <swiper indicator-color="rgba(193,193,193,0.7)" indicator-active-color="#EDEDED" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <swiper indicator-color="rgba(193,193,193,0.7)" indicator-active-color="#EDEDED" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style="height:375rpx">
       <block wx:for="{{swiperList}}" wx:key="item.url">
         <swiper-item>
           <view class="swiper-item" data-url="{{item.url}}" bindtap="swiperNavigateTo">
@@ -13,30 +13,30 @@
   </view>
   <view class="index-nav">
     <navigator class="index-nav-item" url="../products/products">
-      <image src="../../static/img/indexnav.png"></image>
+      <image src="../../static/img/nongchanpin.png"></image>
       <text>农产品</text>
     </navigator>
     <navigator class="index-nav-item" url="../investment/investment">
-      <image src="../../static/img/indexnav.png"></image>
+      <image src="../../static/img/hezuo.png"></image>
       <text>招商引资</text>
     </navigator>
     <navigator class="index-nav-item" url="../policy/policy">
-      <image src="../../static/img/indexnav.png"></image>
+      <image src="../../static/img/zhengce.png"></image>
       <text>农业政策</text>
     </navigator>
     <navigator class="index-nav-item" url="../technology/technology">
-      <image src="../../static/img/indexnav.png"></image>
+      <image src="../../static/img/jishu.png"></image>
       <text>农业技术</text>
     </navigator>
     <navigator class="index-nav-item" url="../experts/experts">
-      <image src="../../static/img/indexnav.png"></image>
+      <image src="../../static/img/zhuanjia.png"></image>
       <text>专家认证</text>
     </navigator>
   </view>
   <view class="new-news">
     <view class="new-header">
       <text class="new-header-title">最新消息</text>
-      <navigator url="../askQuestions/askQuestions" open-type="switchTab" class="more">
+      <navigator url="../moreNews/moreNews" class="more">
         <text class="more-text">更多</text>
         <van-icon class="arrow" name="arrow" color="#979797" size="46prx" />
       </navigator>
@@ -47,4 +47,5 @@
       <my-loading wx:if="{{loading}}" />
     </view>
   </view>
+    <tab-bar pop-selected="0" />
 </view>

@@ -60,6 +60,14 @@ page {
   padding: 14rpx;
   color: #979797;
   font-size: 32rpx;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  text-align: left;
+}
+button::after{
+  width: 0;
+  height: 0;
 }
 .hairline--bottom{
   border-bottom: 1px solid #EDEDED;

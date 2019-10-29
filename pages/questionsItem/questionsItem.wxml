@@ -1,2 +1,86 @@
 <!--pages/questionsItem/questionsItem.wxml-->
-<text>pages/questionsItem/questionsItem.wxml</text>
+<view class="questionsItem">
+  <scroll-view class="choose-item" style="height: 100vh;" scroll-into-view="{{comment == 'true'?'comments':'question-item'}}" scroll-y="true" lower-threshold="50rpx" bindscrolltolower="scrolltolower">
+    <view class="question-item" id="question-item">
+      <view class="user-info">
+        <view class="avatar">
+          <image src="{{chooseQuestion.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="user-info-right">
+          <text class="user-name">{{chooseQuestion.userInfo.nickName}}</text>
+          <view class="time-adr">
+            <text class="time">{{chooseQuestion.craeteTime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <rich-text>{{chooseQuestion.content}}</rich-text>
+        <van-grid column-num="3" clickable="true" wx:if="{{chooseQuestion.image}}" square border="{{ false }}">
+          <van-grid-item use-slot wx:for="{{chooseQuestion.image}}" wx:for-item="i" wx:key="*this" clickable="true" bindtap="previewImage" data-current="{{i}}" data-urls="{{chooseQuestion.image}}">
+            <image style="width: 100%; height: 100%;" src="{{i}}" />
+          </van-grid-item>
+        </van-grid>
+      </view>
+      <view class="reply-box">
+        <view class="reply" bindtap="changeCommentShow" data-pid="false">
+          <van-icon name="comment-o" size="38rpx" color="#979797" />
+          <text class="reply-num">{{chooseQuestion.replyNum}}</text>
+        </view>     
+      </view>
+      <view class="address" wx:if="{{chooseQuestion.address}}">
+          <van-icon name="location" color="#979797" size="26rpx" />
+          <text class="address-text">{{chooseQuestion.address}}</text>
+        </view>
+    </view>
+    <view id="comments">
+      <view class="comment-list">
+        <view class="comment-list-header">
+          评论列表
+        </view>
+        <view class="no-comment" wx:if="{{!commentList}}">
+          无评论
+        </view>
+        <view class="has-comment" wx:if="{{commentList}}">
+          <view class="comment-item" wx:for="{{commentList}}" wx:key="{{item._id}}" data-nick="{{item.userInfo.nickName}}" data-pid="{{item._id}}" bindtap="changeCommentShow">
+            <view class="user-info">
+              <view class="avatar">
+                <image src="{{item.userInfo.avatarUrl}}"></image>
+              </view>
+              <view class="user-info-right">
+                <text class="user-name">{{item.userInfo.nickName}}</text>
+                <view class="time-adr">{{item.craeteTime}}</view>
+              </view>
+            </view>
+            <view class="comment-item-wrapper">
+              <view class="comment-content">{{item.content}}</view>
+            </view>
+          </view>
+          <no-more wx:if="{{!flag}}"></no-more>
+          <my-loading wx:if="{{loading}}" />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <my-popup pop-show="{{commentShow}}" mytest="{{commentShow}}">
+    <view class="push-comment">
+      <view class="comment-close">
+        <van-icon name="cross" color="#979797" size="22px" bindtap="changeCommentShow" />
+      </view>
+      <view wx:if="{{toNick != ''}}" class="rely-person">回复：{{toNick}}</view>
+      <textarea class="push-comment-area" placeholder-class="placeholder" placeholder="请详细描述您问题，字数不少于5个，限300字以内" maxlength="300" bindinput="inputeidt"></textarea>
+      <button class="push-comment-btn" bindtap="checkLogin">发送评论</button>
+    </view>
+  </my-popup>
+  <view class="comment-footer">
+    <button class="share comment-footer-item" open-type="share">
+      <van-icon name="share" size="18px" />
+      <text class="comment-footer-text">转发</text>
+    </button>
+    <button class="to-comment comment-footer-item" bindtap="changeCommentShow" data-pid="false">
+      <van-icon name="comment-o" size="18px" />
+      <text class="comment-footer-text">评论</text>
+    </button>
+  </view>
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>

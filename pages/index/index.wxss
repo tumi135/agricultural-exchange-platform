@@ -32,6 +32,7 @@ padding: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
+  margin-top: 28rpx;
 }
 .index-nav-item{
   width: 120rpx;
@@ -52,7 +53,7 @@ padding: 0;
 
 .new-news{
   width: 100%;
-  padding: 20rpx 20rpx 110rpx 20rpx;
+  padding: 20rpx 20rpx 168rpx 20rpx;
   box-sizing: border-box;
 }
 .new-header{
