@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.type = 'experts') {
+    if (options.type == 'experts') {
       this.setData({
         experts: true
       })
@@ -285,5 +285,37 @@ Page({
 
       }
     })
+  },
+  //检查登录状态
+  checkLogin: async function () {
+    var token = wx.getStorageSync('token')
+
+    var checkToken = await new Promise((resolve, reject) => {
+      wx.request({
+        url: 'https://api.it120.cc/tumi123api/user/check-token?token=' + token,
+        success: function (res) {
+
+          resolve(res.data.code)
+        }
+      })
+    })
+
+    if (!app.globalData.userInfo || checkToken != 0) {
+      wx.showModal({
+        title: '请先登录',
+        // showCancel: false,
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../my/my'
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    } else {
+      this.confirm()
+    }
   },
 })

@@ -2,7 +2,7 @@
 <view class="to-ask">
   <view class="button-box">
     <button class="cancel" bindtap="cancel">取消</button>
-    <button class="confirm" bindtap="confirm">完成</button>
+    <button class="confirm" bindtap="checkLogin">完成</button>
   </view>
   <view class="content">
     <textarea class="textarea" placeholder-class="placeholder" placeholder="请详细描述您问题，字数不少于5个，限300字以内" maxlength="300" bindinput="inputeidt"></textarea>

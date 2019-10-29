@@ -20,8 +20,9 @@ Page({
   onLoad: function() {
     var that = this
     wx.request({
-      url: 'https://www.fastmock.site/mock/26ec56645b0706b8e9a68a60854b6a00/ncp/swiper', //轮播图
+      url: 'https://api.it120.cc/tumi123api/banner/list', //轮播图
       success(res) {
+        console.log(res)
         that.setData({
           swiperList: res.data.data
         })

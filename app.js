@@ -83,15 +83,8 @@ App({
         if (res.code) {
           //发起网络请求
           wx.request({
-            // url: 'https://api.weixin.qq.com/sns/jscode2session',
             url: 'https://api.it120.cc/tumi123api/user/wxapp/login?type=2&code=' + res.code,
             method: 'POST',
-            // data: {
-            //   js_code: res.code,
-            //   appid: 'wx7d8722711d59c082',
-            //   secret: '1643a09137775ce0f64199d4ea44b264',
-            //   grant_type: 'authorization_code'
-            // },
             header: {
               'content-type': 'application/x-www-form-urlencoded'
             },

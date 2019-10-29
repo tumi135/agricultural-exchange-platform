@@ -2,10 +2,10 @@
 <view class="container">
   <view class="swiper">
     <swiper indicator-color="rgba(193,193,193,0.7)" indicator-active-color="#EDEDED" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style="height:375rpx">
-      <block wx:for="{{swiperList}}" wx:key="item.url">
+      <block wx:for="{{swiperList}}" wx:key="item.id">
         <swiper-item>
-          <view class="swiper-item" data-url="{{item.url}}" bindtap="swiperNavigateTo">
-            <image mode="aspectFit" src="{{item.img}}"></image>
+          <view class="swiper-item" data-url="{{item.id}}" bindtap="swiperNavigateTo">
+            <image mode="aspectFit" src="{{item.picUrl}}"></image>
           </view>
         </swiper-item>
       </block>
